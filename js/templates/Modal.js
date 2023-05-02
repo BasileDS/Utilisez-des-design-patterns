@@ -14,23 +14,23 @@ class Form {
                     .$wrapper
                     .querySelector('#firstname')
                     .value
-                
+
                 const lastNameInputValue = this
                     .$wrapper
                     .querySelector('#lastname')
                     .value
 
                 /* Note pour l'exercice : vous aurez besoin de décommenter ses lignes */
-                
-                // const user = new User({
-                //     firstName: firstNameInputValue,
-                //     lastName: lastNameInputValue
-                // })
 
-                // if (user.user) {
+                const user = new User({
+                    firstName: firstNameInputValue,
+                    lastName: lastNameInputValue
+                })
+
+                if (user.user) {
                 this.$modalWrapper.classList.remove('modal-on')
                 this.$modalWrapper.innerHTML = ""
-                // }
+                }
             })
     }
 
@@ -56,7 +56,7 @@ class Form {
         this.$wrapper.innerHTML = form
 
         this.$modalWrapper.classList.add('modal-on')
-        this.$modalWrapper.appendChild(this.$wrapper)   
+        this.$modalWrapper.appendChild(this.$wrapper)
     }
 
     render() {
