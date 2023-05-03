@@ -8,6 +8,22 @@ class FetchMovies {
 }
 
 class FetchMoviesProxy {
+    constructor() {
+        this.cache = []
+    }
+
+    async fetchMovies() {
+        if (this.cache.length) {
+            return this.cache
+        }
+
+        const MoviesApi = new FetchMovies()
+        const moviesData = await MoviesApi.get()
+
+        this.cache.push(moviesData)
+        return moviesData
+    }
+
 }
 
 class App {
