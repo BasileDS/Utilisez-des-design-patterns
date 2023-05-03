@@ -2,7 +2,7 @@ class App {
     constructor() {
         this.$moviesWrapper = document.querySelector('.movies-wrapper')
         this.$modalWrapper = document.querySelector('.modal')
-        
+
         this.moviesApi = new MovieApi('/data/new-movie-data.json')
         this.externalMoviesApi = new MovieApi('/data/external-movie-data.json')
     }
@@ -24,7 +24,7 @@ class App {
         Filter.render()
 
         FullMovies.forEach(movie => {
-                const Template = new MovieCard(movie)
+                const Template = movieCardWithPlayer(new MovieCard(movie))
                 this.$moviesWrapper.appendChild(
                     Template.createMovieCard()
                 )
