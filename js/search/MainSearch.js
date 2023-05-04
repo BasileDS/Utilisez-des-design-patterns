@@ -8,9 +8,6 @@ class Search {
   }
 }
 
-
-
-
 class MovieNameSearch extends Search {
   constructor(Movies) {
     super(Movies)
@@ -20,7 +17,6 @@ class MovieNameSearch extends Search {
     return this.Movies.filter(Movie => Movie.title.toLowerCase().includes(query.toLowerCase()))
   }
 }
-
 
 class ActorNameSearch extends Search {
   constructor(Movies) {
